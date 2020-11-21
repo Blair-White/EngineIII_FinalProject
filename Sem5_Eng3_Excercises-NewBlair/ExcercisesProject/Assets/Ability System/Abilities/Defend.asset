@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55944b13dc5230949944aa204d218da7, type: 3}
+  m_Name: Defend
+  m_EditorClassIdentifier: 
+  CombatText: Defends Against
+  Damage: 0
+  Healing: 0
+  DebuffMessage: 
+  Animator: {fileID: 9100000, guid: db48789186d107949a5a55357d422cd1, type: 2}
+  ButtonText: Defend
+  ButtonTextColor: {r: 0, g: 0.05349303, b: 0.6698113, a: 1}
+  Learnable: 1
+  IsIsolatedText: 0

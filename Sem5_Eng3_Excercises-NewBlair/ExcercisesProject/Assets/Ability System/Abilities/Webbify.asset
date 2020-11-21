@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55944b13dc5230949944aa204d218da7, type: 3}
+  m_Name: Webbify
+  m_EditorClassIdentifier: 
+  CombatText: Spins a Web Around
+  Damage: 0.25
+  Healing: 0
+  DebuffMessage: Paralyzed
+  Animator: {fileID: 9100000, guid: bd8b97ce1bbfd664a97b809703ea863d, type: 2}
+  ButtonText: Webbify
+  ButtonTextColor: {r: 0.5566038, g: 0.19166073, b: 0.35646626, a: 0}
+  Learnable: 1
+  IsIsolatedText: 0
