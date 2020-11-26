@@ -13,13 +13,21 @@ public class _PlayerController : MonoBehaviour
     private int EncounterThrottle;
     private GameObject FadePanel;
     public Animator animator;
-
+    public float mExp;
     // Start is called before the first frame update
     void Start()
     {
         this.SendMessage("LoadData");
         EncounterRate = 0.998f;
         mRig = GetComponent<Rigidbody2D>();
+        GameObject o = GameObject.Find("PersistentManager");
+        o.SendMessage("GetExp");
+        this.SendMessage("SetExp", mExp);
+    }
+
+    void _LoadExp(float xp)
+    {
+        mExp = xp;
     }
 
     // Update is called once per frame

@@ -21,6 +21,8 @@ public class SaveAndLoad : MonoBehaviour
         Ability_3 = PlayerPrefs.GetInt("Ability_3");
         Ability_4 = PlayerPrefs.GetInt("Ability_4");
         _EXP = PlayerPrefs.GetFloat("_EXP");
+        float tempExp = _EXP;
+        this.SendMessage("_LoadExp", tempExp);
         _Health = PlayerPrefs.GetFloat("_Health");
         _Level = PlayerPrefs.GetInt("_Level");
         _Defense = PlayerPrefs.GetFloat("_Defense");
@@ -50,5 +52,10 @@ public class SaveAndLoad : MonoBehaviour
         PlayerPrefs.SetFloat("_Health", _Health);
         PlayerPrefs.SetInt("_Level", _Level);
         PlayerPrefs.SetFloat("_Defense", _Defense);
+    }
+
+    void SetExp(float xp)
+    {
+        _EXP = xp;
     }
 }

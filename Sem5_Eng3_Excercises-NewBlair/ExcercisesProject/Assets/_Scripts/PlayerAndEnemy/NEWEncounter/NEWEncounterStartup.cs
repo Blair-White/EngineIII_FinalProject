@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEditor.Animations;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,9 +33,10 @@ public class NEWEncounterStartup : MonoBehaviour
     private AnimatorController DefaultPlayerAnimation, DefaultEnemyAnimation;
 
     private enum States { Idle, PlayerTurn, EnemyTurn, EndingCombat, CombatEnd};
+    [SerializeField]
     private States State;
     private bool PlayerTurn;
-    private int IdleCount;
+    private int IdleCount, EndingCount;
     private int EnemySignatureCharges;
     private int EnemyDecidedAttack;
     private Image EnemyBarFill, PlayerBarFill;
@@ -102,11 +104,13 @@ public class NEWEncounterStartup : MonoBehaviour
                 if(EnemyBarFill.fillAmount <= 0)
                 {
                     State = States.EndingCombat;
+                    CombatDialogue.GetComponent<TextMeshProUGUI>().text = "You have Won The Battle!";
                     PlayerWin = true;
                 }
                 if(PlayerBarFill.fillAmount <= 0)
                 {
                     State = States.EndingCombat;
+                    CombatDialogue.GetComponent<TextMeshProUGUI>().text = "You have Died!";
                     PlayerDefeat = true;
                 }
                 
@@ -143,7 +147,17 @@ public class NEWEncounterStartup : MonoBehaviour
                 break;
 
             case States.EndingCombat:
-
+                if(PlayerWin)
+                {
+                    EndingCount++;
+                    if(EndingCount > 950)
+                    {
+                        GameObject o = GameObject.Find("PersistentManager");
+                        float f = Random.Range(0.2f, 0.3f);
+                        o.GetComponent<PersistentManager>().ExpWaiting = f;
+                        SceneManager.LoadScene(1);
+                    }
+                }
                 break;
             case States.CombatEnd:
 

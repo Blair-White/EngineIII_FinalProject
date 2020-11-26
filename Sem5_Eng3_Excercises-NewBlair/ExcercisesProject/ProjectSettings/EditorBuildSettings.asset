@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Final/FInalOverworldScene.unity
     guid: 923556ac4efba9e4985e706406d3a22b
   - enabled: 1
-    path: Assets/Scenes/Final/FinalEncounter.unity
-    guid: 309a20037074ca544959f6a77a6fde20
+    path: Assets/Scenes/Final/NEWEncounterScene.unity
+    guid: e952bd25dda89984bb395e679a2dd930
   m_configObjects: {}
