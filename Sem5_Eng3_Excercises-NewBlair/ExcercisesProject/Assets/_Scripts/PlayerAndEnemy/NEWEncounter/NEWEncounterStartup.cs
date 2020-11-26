@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Animations;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,7 +29,7 @@ public class NEWEncounterStartup : MonoBehaviour
     private ScriptableAbility[] EnemyAbilities;
 
     [SerializeField]
-    private AnimatorController DefaultPlayerAnimation, DefaultEnemyAnimation;
+    private RuntimeAnimatorController DefaultPlayerAnimation, DefaultEnemyAnimation;
 
     private enum States { Idle, PlayerTurn, EnemyTurn, EndingCombat, CombatEnd};
     [SerializeField]

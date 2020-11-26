@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.Animations;
+
 
 [CreateAssetMenu(fileName = "Enemy", menuName = "ScriptableObjects/Enemy", order = 3)]
 public class ScriptableEnemy : ScriptableObject
@@ -19,7 +19,7 @@ public class ScriptableEnemy : ScriptableObject
     [SerializeField]
     public ScriptableAbility SignatureAbility;
     [SerializeField]
-    public AnimatorController DefaultAnimation;
+    public RuntimeAnimatorController DefaultAnimation;
     [SerializeField]
     public float Defense;
     [SerializeField]
