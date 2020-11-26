@@ -17,6 +17,7 @@ public class PersistentManager : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
         ExpWaiting = 0;
+        Application.targetFrameRate = 300;
     }
 
     // Update is called once per frame
