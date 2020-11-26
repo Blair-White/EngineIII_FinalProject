@@ -89,7 +89,7 @@ public class NEWEncounterStartup : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
         if(_Enemy.GetComponent<SpriteRenderer>().sprite == null)
@@ -115,7 +115,7 @@ public class NEWEncounterStartup : MonoBehaviour
                 
                 
                 IdleCount++;
-                if(IdleCount > 800)
+                if(IdleCount > 100)
                 {
                     if (PlayerTurn)
                     {
@@ -149,7 +149,7 @@ public class NEWEncounterStartup : MonoBehaviour
                 if(PlayerWin)
                 {
                     EndingCount++;
-                    if(EndingCount > 950)
+                    if(EndingCount > 250)
                     {
                         GameObject o = GameObject.Find("PersistentManager");
                         float f = Random.Range(0.2f, 0.3f);

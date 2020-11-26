@@ -65,12 +65,12 @@ public class _PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(leveling)
         {
             levelingcount++;
-            if(levelingcount > 900)
+            if(levelingcount > 200)
             {
                 lvlup.SetActive(false);
                 leveling = false;
@@ -91,7 +91,7 @@ public class _PlayerController : MonoBehaviour
         if (hAxis > 0 || vAxis > 0)
         {
             EncounterThrottle++;
-            if(inEncounterTiles&&EncounterThrottle>7)
+            if(inEncounterTiles&&EncounterThrottle>0)
             {
                 EncounterRng = Random.value;
                 EncounterThrottle = 0;
