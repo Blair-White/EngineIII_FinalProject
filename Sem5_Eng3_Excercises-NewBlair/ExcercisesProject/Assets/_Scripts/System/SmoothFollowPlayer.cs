@@ -10,11 +10,11 @@ public class SmoothFollowPlayer : MonoBehaviour
     void Start()
     {
         mPlayer = GameObject.Find("PlayerCharacter");
-        Speed = 0.002f;
+        Speed = 0.02f;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         transform.position = Vector3.Lerp
             (transform.position, mPlayer.transform.position, Speed);

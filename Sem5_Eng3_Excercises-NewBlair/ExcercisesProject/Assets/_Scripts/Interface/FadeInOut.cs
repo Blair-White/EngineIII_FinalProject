@@ -19,13 +19,13 @@ public class FadeInOut : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (FadeIn)
         {
             if (mAlpha > 0)
             {
-                mAlpha -= 0.001f;
+                mAlpha -= 0.013f;
                 this.GetComponent<Image>().color =
                     new Color(0, 0, 0, mAlpha);
                 mVolume += 0.001f;
@@ -39,7 +39,7 @@ public class FadeInOut : MonoBehaviour
         {
             if (mAlpha < 1)
             {
-                mAlpha += 0.001f;
+                mAlpha += 0.013f;
                 this.GetComponent<Image>().color =
                     new Color(0, 0, 0, mAlpha);
                 mVolume -= 0.001f;
