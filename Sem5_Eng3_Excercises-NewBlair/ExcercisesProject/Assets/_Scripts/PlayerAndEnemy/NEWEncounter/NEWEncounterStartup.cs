@@ -282,7 +282,7 @@ public class NEWEncounterStartup : MonoBehaviour
     void Struggle(bool EnemyActivated)
     {
         
-        if(Random.Range(0,100) > 85)
+        if(Random.Range(0,100) > 45)
         {
             if (EnemyActivated == false)
                 _EnemyParent.SendMessage("TakeDamage", 1.0f);

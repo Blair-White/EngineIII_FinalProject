@@ -25,9 +25,24 @@ public class SaveAndLoad : MonoBehaviour
         this.SendMessage("_LoadExp", tempExp);
         _Health = PlayerPrefs.GetFloat("_Health");
         _Level = PlayerPrefs.GetInt("_Level");
+        if (_Level == 0) _Level = 1;
+        int tempLvl = _Level;
+        this.SendMessage("SetLevel", tempLvl);
         _Defense = PlayerPrefs.GetFloat("_Defense");
+        
     }
-
+    
+  void SetAbility(int ability)
+    {
+        switch (ability)
+        {
+            case 1:
+                Ability_1 = 7;
+                break;
+            default:
+                break;
+        }
+    }
   void SaveData()
     {       
         
@@ -48,6 +63,8 @@ public class SaveAndLoad : MonoBehaviour
   
   void SavePlayerStats()
     {
+        _EXP = this.GetComponent<_PlayerController>().mExp;
+        _Level = this.GetComponent<_PlayerController>().mLevel;
         PlayerPrefs.SetFloat("_EXP", _EXP);
         PlayerPrefs.SetFloat("_Health", _Health);
         PlayerPrefs.SetInt("_Level", _Level);
